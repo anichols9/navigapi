@@ -1,2 +1,0 @@
-# navigapi
-Documentation Website
