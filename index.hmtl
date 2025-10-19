@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>navigapi | navigate APIs, illuminate risks.</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #f5f5f5;
+      font-family: 'JetBrains Mono', monospace;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+    }
+
+    img {
+      width: 120px;
+      height: auto;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      filter: brightness(0) invert(1); /* makes logo white if it's black */
+    }
+
+    h1, h2, h3 {
+      color: #f5f5f5;
+      margin: 20px 0 10px;
+      text-align: center;
+    }
+
+    .tagline {
+      color: #bfbfbf;
+      font-size: 1.1em;
+      margin-bottom: 40px;
+    }
+
+    .section {
+      width: 80%;
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    .tldr {
+      border-left: 3px solid #f5f5f5;
+      padding-left: 15px;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #f5f5f5;
+      color: #0e0e0e;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #bfbfbf;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #bfbfbf;
+      border-top: 1px solid #333;
+    }
+
+    code {
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <img src="your-logo.png" alt="Navigapi Logo" />
+
+  <!-- Tagline -->
+  <h1>Navigate APIs, Illuminate Risks.</h1>
+
+  <!-- TL;DR -->
+  <div class="section tldr">
+    <h2>TL;DR</h2>
+    <p>[Brief summary of who you are and what Navigapi does — short, report-style intro goes here.]</p>
+  </div>
+
+  <!-- Five W’s + How -->
+  <div class="section">
+    <h2>Five W’s + How</h2>
+    <pre>
+{
+  "who": "[placeholder]",
+  "what": "[placeholder]",
+  "where": "[placeholder]",
+  "when": "[placeholder]",
+  "why": "[placeholder]",
+  "how": "[placeholder]"
+}
+    </pre>
+  </div>
+
+  <!-- Note for users -->
+  <div class="section">
+    <h2>Note</h2>
+    <p>If you’ve never used Postman before, you can access the Navigapi collection without signing in by choosing <code>View Only</code> when prompted.  
+    Each endpoint demonstrates our methodology and security approach for API assessment.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="section" style="text-align:center;">
+    <a href="https://postman-link-goes-here" class="button">View API Documentation</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    #status: 200 OK — Secure. Simple. Shipping.
+  </footer>
+
+</body>
+</html>
