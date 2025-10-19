@@ -22,7 +22,6 @@
       margin-top: 60px;
       margin-bottom: 20px;
       display: block;
-      filter: none; /* already white */
     }
 
     h1 {
@@ -42,6 +41,13 @@
       border-left: 3px solid #f5f5f5;
       padding-left: 15px;
       margin-bottom: 30px;
+    }
+
+    blockquote {
+      border-left: 3px solid #ff6c37;
+      padding-left: 15px;
+      color: #f5f5f5;
+      margin: 10px 0 30px;
     }
 
     h2 {
@@ -100,34 +106,68 @@
   <!-- TL;DR -->
   <div class="section tldr">
     <h2>TL;DR</h2>
-    <p>[Brief summary of who you are and what navigapi does — short, report-style intro goes here.]</p>
+    <blockquote>
+      <strong>Navigapi:</strong> we combine practical logistics experience with focused API testing.<br>
+      This landing page mirrors a real bounty report — clear, concise, and built to show how we think about risk.<br>
+      Scroll through the sections, learn our process, then click <strong>View API Documentation</strong> to see the mock API in action.
+    </blockquote>
   </div>
 
-  <!-- Five W’s + How -->
+  <!-- API Security for Logistics -->
   <div class="section">
-    <h2>Five W’s + How</h2>
-    <pre>
-{
-  "who": "[placeholder]",
-  "what": "[placeholder]",
-  "where": "[placeholder]",
-  "when": "[placeholder]",
-  "why": "[placeholder]",
-  "how": "[placeholder]"
-}
-    </pre>
+    <h2>API Security for Logistics: The What, Why, Who, When, Where, and How</h2>
+
+    <h3>What</h3>
+    <p>API security for logistics isn’t about scanning endpoints — it’s about protecting the flow of freight data, quotes, and billing logic that keep supply chains running.<br>
+    Navigapi focuses on logic-layer flaws that scanners miss: unauthorized rate edits, shipment access leaks, or booking manipulation across user contexts.</p>
+
+    <h3>Why</h3>
+    <p>Because every modern logistics operation — from TMS platforms to carrier portals — runs on APIs.<br>
+    When those APIs are exposed, even unintentionally, attackers can move money, shipments, and trust.<br>
+    Security scanners find patterns; we find behavior.<br>
+    That difference protects revenue, customers, and reputation.</p>
+
+    <h3>Who</h3>
+    <p>Navigapi was founded by Austin Nichols, a logistics coordinator turned API pentester.<br>
+    Years in freight operations taught us how carrier data moves — and where it can break.<br>
+    That blend of logistics experience and security testing makes Navigapi uniquely fluent in how real platforms behave under pressure.</p>
+
+    <h3>When</h3>
+    <p>API security matters before a breach, not after one.<br>
+    Our best clients engage Navigapi during product development, major updates, or when exposing new carrier integrations — the exact moments when logic risk is highest.</p>
+
+    <h3>Where</h3>
+    <p>We test remotely, across staging and production-safe environments.<br>
+    No intrusive scans, no DDoS-like automation — only controlled, authenticated requests that mirror real user behavior.</p>
+
+    <h3>How</h3>
+    <p>We test manually — one endpoint, one function at a time.<br>
+    No fuzzing, no noise, no brute forcing.<br>
+    Our focus is precision: reading the API, understanding its intent, and finding where logic diverges from design.<br>
+    Every request has purpose. Every response has signal.<br>
+    That’s how we test — quietly, accurately, and ethically.</p>
   </div>
 
-  <!-- Note for users -->
+  <!-- Note -->
   <div class="section">
     <h2>Note</h2>
-    <p>If you’ve never used Postman before, you can access the navigapi collection without signing in by choosing <code>View Only</code> when prompted.  
-    Each endpoint demonstrates our methodology and security approach for API assessment.</p>
+    <blockquote>
+      If you’ve never used <strong>Postman</strong> before, here’s how to explore the Navigapi collection:<br><br>
+      1. Click <strong>View API Documentation</strong> below.<br>
+      2. Inside Postman, select <strong>View complete documentation</strong> to browse all available requests.<br>
+      3. Choose any request and click <strong>Open request →</strong> to load it into the workspace.<br>
+      4. Press <strong>Send</strong> to view the live mock API response.<br>
+      5. For the <strong>POST</strong> endpoint, open the <code>Body</code> tab, select <code>raw</code>, and fill in your details before sending.<br><br>
+      Each request reflects our testing methodology — clear, controlled, and replicable.<br><br>
+      <em>No data retention. Every request is yours alone.</em>
+    </blockquote>
   </div>
 
   <!-- CTA -->
   <div class="section" style="text-align:center;">
-    <a href="https://postman-link-goes-here" class="button">View API Documentation</a>
+    <a href="https://www.postman.com/navigapi/workspace/navigapi/collection/45109230-35d74d3b-b314-4e96-b40e-61a2f8116024?action=share&creator=45109230&active-environment=45109230-8b8e043d-a968-4625-9f71-37ca7ec7c6c8" class="button">
+      View API Documentation
+    </a>
   </div>
 
   <!-- Footer -->
