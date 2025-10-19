@@ -14,7 +14,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: left;
     }
 
     img {
@@ -22,25 +21,21 @@
       height: auto;
       margin-top: 60px;
       margin-bottom: 20px;
-      filter: brightness(0) invert(1); /* makes logo white if it's black */
+      display: block;
+      filter: none; /* already white */
     }
 
-    h1, h2, h3 {
+    h1 {
       color: #f5f5f5;
-      margin: 20px 0 10px;
+      margin: 10px 0 40px;
       text-align: center;
-    }
-
-    .tagline {
-      color: #bfbfbf;
-      font-size: 1.1em;
-      margin-bottom: 40px;
     }
 
     .section {
       width: 80%;
       max-width: 800px;
       margin-bottom: 40px;
+      text-align: left;
     }
 
     .tldr {
@@ -49,9 +44,25 @@
       margin-bottom: 30px;
     }
 
+    h2 {
+      color: #f5f5f5;
+      margin-bottom: 10px;
+    }
+
+    pre {
+      background: #141414;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    code {
+      color: #ffd700;
+    }
+
     .button {
       display: inline-block;
-      background-color: #f5f5f5;
+      background-color: #ff6c37; /* Postman orange */
       color: #0e0e0e;
       padding: 10px 20px;
       text-decoration: none;
@@ -61,7 +72,7 @@
     }
 
     .button:hover {
-      background-color: #bfbfbf;
+      background-color: #ff844f;
     }
 
     footer {
@@ -70,17 +81,18 @@
       font-size: 0.9em;
       color: #bfbfbf;
       border-top: 1px solid #333;
+      text-align: center;
     }
 
-    code {
-      color: #ffd700;
+    .green {
+      color: #00ff7f; /* Green for 200 OK */
     }
   </style>
 </head>
 <body>
 
   <!-- Logo -->
-  <img src="your-logo.png" alt="Navigapi Logo" />
+  <img src="logo-white.png" alt="Navigapi Logo" />
 
   <!-- Tagline -->
   <h1>Navigate APIs, Illuminate Risks.</h1>
@@ -88,7 +100,7 @@
   <!-- TL;DR -->
   <div class="section tldr">
     <h2>TL;DR</h2>
-    <p>[Brief summary of who you are and what Navigapi does — short, report-style intro goes here.]</p>
+    <p>[Brief summary of who you are and what navigapi does — short, report-style intro goes here.]</p>
   </div>
 
   <!-- Five W’s + How -->
@@ -109,7 +121,7 @@
   <!-- Note for users -->
   <div class="section">
     <h2>Note</h2>
-    <p>If you’ve never used Postman before, you can access the Navigapi collection without signing in by choosing <code>View Only</code> when prompted.  
+    <p>If you’ve never used Postman before, you can access the navigapi collection without signing in by choosing <code>View Only</code> when prompted.  
     Each endpoint demonstrates our methodology and security approach for API assessment.</p>
   </div>
 
@@ -120,7 +132,7 @@
 
   <!-- Footer -->
   <footer>
-    #status: 200 OK — Secure. Simple. Shipping.
+    <span class="green">#status: 200 OK</span> — Secure. Simple. Shipping.
   </footer>
 
 </body>
