@@ -8,8 +8,8 @@
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-  <!-- Redoc (OpenAPI Viewer) -->
-  <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+  <!-- Swagger UI -->
+  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css" />
 
   <style>
     body {
@@ -24,7 +24,7 @@
     }
 
     img {
-      width: 160px; /* Bigger logo */
+      width: 160px;
       height: auto;
       margin-top: 60px;
       margin-bottom: 20px;
@@ -45,28 +45,42 @@
       text-align: left;
     }
 
+    h2 {
+      color: #f5f5f5;
+      margin-bottom: 15px;
+    }
+
     blockquote {
-      border-left: 3px solid #ff6c37; /* Postman orange */
+      border-left: 3px solid #ff6c37;
       padding-left: 15px;
       color: #f5f5f5;
       margin: 10px 0 30px;
+      line-height: 1.6;
     }
 
     .button {
       display: inline-block;
       background-color: #ff6c37;
       color: #0e0e0e;
-      padding: 10px 20px;
+      padding: 12px 28px;
       text-decoration: none;
       font-weight: bold;
       border-radius: 4px;
       transition: background-color 0.2s ease-in-out;
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     .button:hover {
       background-color: #ff844f;
     }
+
+    #swagger-ui {
+      width: 100%;
+      margin-top: 40px;
+      background-color: #0e0e0e;
+    }
+
+    .swagger-ui .topbar { display: none !important; }
 
     footer {
       margin-top: 60px;
@@ -80,14 +94,6 @@
     .green {
       color: #00ff7f;
     }
-
-    /* Embedded OpenAPI Docs */
-    #redoc-container {
-      width: 100%;
-      background-color: #141414;
-      border-top: 1px solid #333;
-      margin-top: 50px;
-    }
   </style>
 </head>
 
@@ -95,34 +101,58 @@
   <!-- Logo -->
   <img src="logo-white.png" alt="Navigapi Logo" />
 
-  <!-- Tagline -->
+  <!-- Title -->
   <h1>API Pentesting for Logistics & Transportation</h1>
 
-  <!-- Note / Closer -->
-  <div class="section">
-    <h2>Note</h2>
-    <blockquote>
-      Navigapi delivers precise, manual API testing built for logistics, transportation, and freight tech.  
-      Every test follows a clear scope, ethical process, and measurable impact.  
+  <!-- TL;DR Section -->
+  <div class="section" style="text-align:center;">
+    <h2 style="text-align:left;">TL;DR</h2>
+    <blockquote style="text-align:left;">
+      <strong>Navigapi</strong> specializes in API pentesting for logistics and transportation systems —
+      testing the same APIs that move freight, rates, and revenue.  
       <br><br>
-      If you have a <strong>Postman account</strong>, you can also view and use our public workspace directly there.  
+      Every engagement is manual, scoped, and logic-focused — targeting BOLA, BFLA, and real workflow flaws
+      across carrier portals, TMS/WMS integrations, and booking APIs.  
       <br><br>
-      <a href="https://www.postman.com/navigapi/workspace/navigapi/collection/45109230-35d74d3b-b314-4e96-b40e-61a2f8116024?action=share&creator=45109230&active-environment=45109230-8b8e043d-a968-4625-9f71-37ca7ec7c6c8" class="button">
-        View API Documentation
-      </a>
+      Below, you can explore our <strong>interactive documentation</strong> — each endpoint responds live from our
+      mock API environment so you can see what our methodology feels like in practice.  
+      <br><br>
+      If you have a <strong>Postman account</strong>, you can also view and use our public workspace there
+      for a cleaner, in-app experience.  
     </blockquote>
+
+    <a href="https://www.postman.com/navigapi/workspace/navigapi/collection/45109230-35d74d3b-b314-4e96-b40e-61a2f8116024?action=share&creator=45109230&active-environment=45109230-8b8e043d-a968-4625-9f71-37ca7ec7c6c8" 
+       class="button">
+      View API Documentation
+    </a>
   </div>
 
-  <!-- Embedded OpenAPI Docs -->
-  <div id="redoc-container"></div>
+  <!-- Interactive Swagger UI Docs -->
+  <div id="swagger-ui"></div>
 
+  <!-- Swagger UI Script -->
+  <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
   <script>
-    Redoc.init('https://api.navigapi.io/docs/openapi.json', {
-      theme: {
-        colors: { primary: { main: '#ff6c37' } },
-        typography: { fontFamily: 'JetBrains Mono, monospace' },
-      }
-    }, document.getElementById('redoc-container'));
+    window.onload = () => {
+      SwaggerUIBundle({
+        url: "https://api.navigapi.io/docs/openapi.json",
+        dom_id: "#swagger-ui",
+        deepLinking: true,
+        layout: "BaseLayout",
+        docExpansion: "list",
+        defaultModelsExpandDepth: -1,
+        presets: [SwaggerUIBundle.presets.apis],
+        tryItOutEnabled: true,
+        syntaxHighlight: {
+          activate: true,
+          theme: "obsidian"
+        },
+        requestInterceptor: (req) => {
+          req.headers["Accept"] = "application/json";
+          return req;
+        }
+      });
+    };
   </script>
 
   <!-- Footer -->
