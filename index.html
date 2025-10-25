@@ -82,6 +82,33 @@
 
     .swagger-ui .topbar { display: none !important; }
 
+    /* Dark mode readability + cleanup */
+    .swagger-ui .opblock-summary-path,
+    .swagger-ui .opblock-summary-method {
+      color: #ffffff !important;
+    }
+
+    .swagger-ui .opblock-summary-description {
+      display: none !important;
+    }
+
+    .swagger-ui .opblock-tag-section {
+      border-top: none !important;
+    }
+
+    .swagger-ui .opblock-tag {
+      display: none !important;
+    }
+
+    .swagger-ui .opblock {
+      background-color: #141414 !important;
+      border: 1px solid #333 !important;
+    }
+
+    .swagger-ui .opblock.opblock-get {
+      border-color: #ff6c37 !important;
+    }
+
     footer {
       margin-top: 60px;
       padding: 20px;
@@ -108,17 +135,13 @@
   <div class="section" style="text-align:center;">
     <h2 style="text-align:left;">TL;DR</h2>
     <blockquote style="text-align:left;">
-      <strong>Navigapi</strong> specializes in API pentesting for logistics and transportation systems —
-      testing the same APIs that move freight, rates, and revenue.  
+      <strong>Navigapi</strong> focuses on securing the APIs that move the world — from freight and fleet management platforms to aviation, maritime, and last-mile mobility systems.
       <br><br>
-      Every engagement is manual, scoped, and logic-focused — targeting BOLA, BFLA, and real workflow flaws
-      across carrier portals, TMS/WMS integrations, and booking APIs.  
+      We specialize in manual, logic-driven API testing that targets authorization flaws, unsafe workflows, and cross-system exposures that can impact freight rates, routing visibility, and shipment integrity.
       <br><br>
-      Below, you can explore our <strong>interactive documentation</strong> — each endpoint responds live from our
-      mock API environment so you can see what our methodology feels like in practice.  
+      The interactive documentation below lets you explore our live mock API — a transparent example of how we test real endpoints used in logistics, transportation, and movement tech.
       <br><br>
-      If you have a <strong>Postman account</strong>, you can also view and use our public workspace there
-      for a cleaner, in-app experience.  
+      If you have a <strong>Postman account</strong>, you can also view and use our public workspace directly for an in-app experience.
     </blockquote>
 
     <a href="https://www.postman.com/navigapi/workspace/navigapi/collection/45109230-35d74d3b-b314-4e96-b40e-61a2f8116024?action=share&creator=45109230&active-environment=45109230-8b8e043d-a968-4625-9f71-37ca7ec7c6c8" 
@@ -146,6 +169,10 @@
         syntaxHighlight: {
           activate: true,
           theme: "obsidian"
+        },
+        onComplete: function() {
+          const tagHeader = document.querySelector('.opblock-tag');
+          if (tagHeader) tagHeader.remove();
         },
         requestInterceptor: (req) => {
           req.headers["Accept"] = "application/json";
