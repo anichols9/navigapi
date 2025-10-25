@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>navigapi | navigate APIs, illuminate risks.</title>
+  <title>Navigapi | API Pentesting for Logistics & Transportation</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     body {
       background-color: #0e0e0e;
@@ -17,7 +18,7 @@
     }
 
     img {
-      width: 120px;
+      max-width: 160px;
       height: auto;
       margin-top: 60px;
       margin-bottom: 20px;
@@ -28,42 +29,7 @@
       color: #f5f5f5;
       margin: 10px 0 40px;
       text-align: center;
-    }
-
-    .section {
-      width: 80%;
-      max-width: 800px;
-      margin-bottom: 40px;
-      text-align: left;
-    }
-
-    .tldr {
-      border-left: 3px solid #f5f5f5;
-      padding-left: 15px;
-      margin-bottom: 30px;
-    }
-
-    blockquote {
-      border-left: 3px solid #ff6c37;
-      padding-left: 15px;
-      color: #f5f5f5;
-      margin: 10px 0 30px;
-    }
-
-    h2 {
-      color: #f5f5f5;
-      margin-bottom: 10px;
-    }
-
-    pre {
-      background: #141414;
-      padding: 15px;
-      border-radius: 5px;
-      overflow-x: auto;
-    }
-
-    code {
-      color: #ffd700;
+      font-size: 1.8rem;
     }
 
     .button {
@@ -93,6 +59,24 @@
     .green {
       color: #00ff7f; /* Green for 200 OK */
     }
+
+    a {
+      color: #ffcc33;
+    }
+
+    redoc {
+      background-color: #0e0e0e;
+      color: #f5f5f5;
+      width: 100%;
+      min-height: 80vh;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.4rem;
+        padding: 0 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -101,73 +85,19 @@
   <img src="logo-white.png" alt="Navigapi Logo" />
 
   <!-- Tagline -->
-  <h1>Navigate APIs, Illuminate Risks.</h1>
+  <h1>API Pentesting for Logistics & Transportation</h1>
 
-  <!-- TL;DR -->
-  <div class="section tldr">
-    <h2>TL;DR</h2>
-    <blockquote>
-      <strong>Navigapi:</strong> we combine practical logistics experience with focused API testing.<br>
-      This landing page mirrors a real bounty report — clear, concise, and built to show how we think about risk.<br>
-      Scroll through the sections, learn our process, then click <strong>View API Documentation</strong> to see the mock API in action.
-    </blockquote>
-  </div>
-
-  <!-- API Security for Logistics -->
-  <div class="section">
-    <h2>API Security for Logistics: The What, Why, Who, When, Where, and How</h2>
-
-    <h3>What</h3>
-    <p>API security for logistics isn’t about scanning endpoints — it’s about protecting the flow of freight data, quotes, and billing logic that keep supply chains running.<br>
-    Navigapi focuses on logic-layer flaws that scanners miss: unauthorized rate edits, shipment access leaks, or booking manipulation across user contexts.</p>
-
-    <h3>Why</h3>
-    <p>Because every modern logistics operation — from TMS platforms to carrier portals — runs on APIs.<br>
-    When those APIs are exposed, even unintentionally, attackers can move money, shipments, and trust.<br>
-    Security scanners find patterns; we find behavior.<br>
-    That difference protects revenue, customers, and reputation.</p>
-
-    <h3>Who</h3>
-    <p>Navigapi was founded by Austin Nichols, a logistics coordinator turned API pentester.<br>
-    Years in freight operations taught us how carrier data moves — and where it can break.<br>
-    That blend of logistics experience and security testing makes Navigapi uniquely fluent in how real platforms behave under pressure.</p>
-
-    <h3>When</h3>
-    <p>API security matters before a breach, not after one.<br>
-    Our best clients engage Navigapi during product development, major updates, or when exposing new carrier integrations — the exact moments when logic risk is highest.</p>
-
-    <h3>Where</h3>
-    <p>We test remotely, across staging and production-safe environments.<br>
-    No intrusive scans, no DDoS-like automation — only controlled, authenticated requests that mirror real user behavior.</p>
-
-    <h3>How</h3>
-    <p>We test manually — one endpoint, one function at a time.<br>
-    No fuzzing, no noise, no brute forcing.<br>
-    Our focus is precision: reading the API, understanding its intent, and finding where logic diverges from design.<br>
-    Every request has purpose. Every response has signal.<br>
-    That’s how we test — quietly, accurately, and ethically.</p>
-  </div>
+  <!-- Embedded OpenAPI Documentation -->
+  <section id="docs" style="width:100%; max-width:1200px; margin:auto; padding:20px;">
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+    <redoc spec-url="https://api.navigapi.io/docs/openapi.json"></redoc>
+  </section>
 
   <!-- Note -->
-  <div class="section">
-    <h2>Note</h2>
-    <blockquote>
-      If you’ve never used <strong>Postman</strong> before, here’s how to explore the Navigapi collection:<br><br>
-      1. Click <strong>View API Documentation</strong> below.<br>
-      2. Inside Postman, select <strong>View complete documentation</strong> to browse all available requests.<br>
-      3. Choose any request and click <strong>Open request →</strong> to load it into the workspace.<br>
-      4. Press <strong>Send</strong> to view the live mock API response.<br>
-      5. For the <strong>POST</strong> endpoint, open the <code>Body</code> tab, select <code>raw</code>, and fill in your details before sending.<br><br>
-      Each request reflects our testing methodology — clear, controlled, and replicable.<br><br>
-      <em>No data retention. Every request is yours alone.</em>
-    </blockquote>
-  </div>
-
-  <!-- CTA -->
-  <div class="section" style="text-align:center;">
-    <a href="https://www.postman.com/navigapi/workspace/navigapi/collection/45109230-35d74d3b-b314-4e96-b40e-61a2f8116024?action=share&creator=45109230&active-environment=45109230-8b8e043d-a968-4625-9f71-37ca7ec7c6c8" class="button">
-      View API Documentation
-    </a>
+  <div class="section" style="text-align:center; margin-top:40px; width:80%; max-width:800px;">
+    <p>
+      You can <strong><a href="https://www.postman.com/navigapi/workspace/navigapi/collection/45109230-35d74d3b-b314-4e96-b40e-61a2f8116024?action=share&creator=45109230&active-environment=45109230-8b8e043d-a968-4625-9f71-37ca7ec7c6c8" target="_blank">click here</a></strong> if you have a Postman account to view the documentation there.
+    </p>
   </div>
 
   <!-- Footer -->
