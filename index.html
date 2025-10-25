@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Navigapi | API Pentesting for Logistics & Transportation</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Redoc (OpenAPI Viewer) -->
+  <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+
   <style>
     body {
       background-color: #0e0e0e;
@@ -18,7 +24,7 @@
     }
 
     img {
-      max-width: 160px;
+      width: 160px; /* Bigger logo */
       height: auto;
       margin-top: 60px;
       margin-bottom: 20px;
@@ -29,18 +35,33 @@
       color: #f5f5f5;
       margin: 10px 0 40px;
       text-align: center;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
+    }
+
+    .section {
+      width: 80%;
+      max-width: 800px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    blockquote {
+      border-left: 3px solid #ff6c37; /* Postman orange */
+      padding-left: 15px;
+      color: #f5f5f5;
+      margin: 10px 0 30px;
     }
 
     .button {
       display: inline-block;
-      background-color: #ff6c37; /* Postman orange */
+      background-color: #ff6c37;
       color: #0e0e0e;
       padding: 10px 20px;
       text-decoration: none;
       font-weight: bold;
       border-radius: 4px;
       transition: background-color 0.2s ease-in-out;
+      margin-top: 10px;
     }
 
     .button:hover {
@@ -57,53 +78,56 @@
     }
 
     .green {
-      color: #00ff7f; /* Green for 200 OK */
+      color: #00ff7f;
     }
 
-    a {
-      color: #ffcc33;
-    }
-
-    redoc {
-      background-color: #0e0e0e;
-      color: #f5f5f5;
+    /* Embedded OpenAPI Docs */
+    #redoc-container {
       width: 100%;
-      min-height: 80vh;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 1.4rem;
-        padding: 0 10px;
-      }
+      background-color: #141414;
+      border-top: 1px solid #333;
+      margin-top: 50px;
     }
   </style>
 </head>
-<body>
 
+<body>
   <!-- Logo -->
   <img src="logo-white.png" alt="Navigapi Logo" />
 
   <!-- Tagline -->
   <h1>API Pentesting for Logistics & Transportation</h1>
 
-  <!-- Embedded OpenAPI Documentation -->
-  <section id="docs" style="width:100%; max-width:1200px; margin:auto; padding:20px;">
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
-    <redoc spec-url="https://api.navigapi.io/docs/openapi.json"></redoc>
-  </section>
-
-  <!-- Note -->
-  <div class="section" style="text-align:center; margin-top:40px; width:80%; max-width:800px;">
-    <p>
-      You can <strong><a href="https://www.postman.com/navigapi/workspace/navigapi/collection/45109230-35d74d3b-b314-4e96-b40e-61a2f8116024?action=share&creator=45109230&active-environment=45109230-8b8e043d-a968-4625-9f71-37ca7ec7c6c8" target="_blank">click here</a></strong> if you have a Postman account to view the documentation there.
-    </p>
+  <!-- Note / Closer -->
+  <div class="section">
+    <h2>Note</h2>
+    <blockquote>
+      Navigapi delivers precise, manual API testing built for logistics, transportation, and freight tech.  
+      Every test follows a clear scope, ethical process, and measurable impact.  
+      <br><br>
+      If you have a <strong>Postman account</strong>, you can also view and use our public workspace directly there.  
+      <br><br>
+      <a href="https://www.postman.com/navigapi/workspace/navigapi/collection/45109230-35d74d3b-b314-4e96-b40e-61a2f8116024?action=share&creator=45109230&active-environment=45109230-8b8e043d-a968-4625-9f71-37ca7ec7c6c8" class="button">
+        View API Documentation
+      </a>
+    </blockquote>
   </div>
+
+  <!-- Embedded OpenAPI Docs -->
+  <div id="redoc-container"></div>
+
+  <script>
+    Redoc.init('https://api.navigapi.io/docs/openapi.json', {
+      theme: {
+        colors: { primary: { main: '#ff6c37' } },
+        typography: { fontFamily: 'JetBrains Mono, monospace' },
+      }
+    }, document.getElementById('redoc-container'));
+  </script>
 
   <!-- Footer -->
   <footer>
     <span class="green">#status: 200 OK</span> — Secure. Simple. Shipping.
   </footer>
-
 </body>
 </html>
